@@ -1,4 +1,4 @@
-from facilitity_services import FacilityService
+from services.facilitity_services import FacilityService
 from validates import validate_choice
 from .utils import print_facilities
 
@@ -27,7 +27,7 @@ def list_facilities():
 def creating_new_facility():
     name = input("Facility name: ")
     try:
-        if not (name.isnumeric or name.strip() == ""):
+        if not (name.isnumeric() or name.strip() == ""):
             r = FacilityService.create_facility(name)
             if r == None:
                 print("Done!")
