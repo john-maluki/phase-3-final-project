@@ -1,8 +1,6 @@
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, backref
 from sqlalchemy import ForeignKey
 
-from connect import Session
-
 
 class Base(DeclarativeBase):
     pass
@@ -27,8 +25,8 @@ class Facility(Base):
         """
         Returns facility adopters
         """
-        adopters = [dog.adopter for dog in self.dogs]
-        return adopters
+        adopters = set([dog.adopter for dog in self.dogs])
+        return list(adopters)
 
 
 class Adopter(Base):
@@ -37,6 +35,25 @@ class Adopter(Base):
     first_name: Mapped[str] = mapped_column(nullable=False)
     last_name: Mapped[str] = mapped_column(nullable=False)
     dogs = relationship("Dog", backref=backref("adopter"))
+
+    def get_full_name(self):
+        """
+        Returns full name
+        """
+        return f"{self.first_name} {self.last_name}"
+
+    def get_adopter_dogs(self):
+        """
+        Returns all adopted dogs
+        """
+        return self.dogs
+
+    def get_facilities(self):
+        """
+        Returns facility adopter own dogs
+        """
+        facilities = [dog.facility for dog in self.dogs]
+        return facilities
 
     def __repr__(self):
         return "Adopter<{0} {1}>".format(self.first_name, self.last_name)
@@ -49,8 +66,14 @@ class Dog(Base):
     facility_id: Mapped[int] = mapped_column(ForeignKey(Facility.id), nullable=False)
     adopter_id: Mapped[int] = mapped_column(ForeignKey(Adopter.id))
 
+    def get_dog_name(self):
+        return self.name
+
     def get_adopter(self):
         return self.adopter
+
+    def get_facility(self):
+        return self.facility
 
     def __repr__(self):
         return "Dog<{0} adopted by {1}>".format(self.name, self.get_adopter())
