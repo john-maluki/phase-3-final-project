@@ -1,5 +1,5 @@
-from connect import Session
-from models import Adopter
+from db.connect import Session
+from db.models import Adopter
 
 
 class AdopterService:

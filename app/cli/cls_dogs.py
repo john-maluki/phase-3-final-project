@@ -1,7 +1,7 @@
 from services.dog_services import DogService
 from cli.cls_facility import list_facilities
 from cli.cls_adopters import list_all_adopters
-from validates import validate_choice
+from validaters import validate_choice
 from .utils import print_dogs
 
 

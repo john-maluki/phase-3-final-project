@@ -1,5 +1,5 @@
-from connect import Session
-from models import Dog
+from db.connect import Session
+from db.models import Dog
 
 
 class DogService:

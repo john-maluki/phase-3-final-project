@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from validates import validate_choice
+from validaters import validate_choice
 from cli.cls_facility import interact_with_facilities
 from cli.cls_adopters import interacting_with_adopters
 from cli.cls_dogs import interacting_with_dogs

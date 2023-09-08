@@ -38,8 +38,8 @@ Stray dogs, that continue to live on streets, even if they are sterilized, will 
 - Viewing all adopters in the system
 - Registering a new user(adopter) in the system
 - Updating adopters details
-- Removing adopters from the system
 - List all adopter dogs
+- List facilities associated with adopters
 
 **Managing Dogs**
 
@@ -47,8 +47,6 @@ Stray dogs, that continue to live on streets, even if they are sterilized, will 
 - Registering a new stray dog in the system
 - Updating dogs details
 - Removing dogs from the system
-- List all adopted dogs
-- List all unadopted dogs
 
 ## Technologies Used
 

@@ -1,5 +1,5 @@
 from services.adopter_services import AdopterService
-from validates import validate_choice
+from validaters import validate_choice
 from .utils import print_adopters, is_valid_name
 
 

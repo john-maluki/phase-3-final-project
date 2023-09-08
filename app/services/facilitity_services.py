@@ -1,5 +1,5 @@
-from connect import Session
-from models import Facility
+from db.connect import Session
+from db.models import Facility
 
 
 class FacilityService:

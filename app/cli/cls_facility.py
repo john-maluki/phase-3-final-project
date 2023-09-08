@@ -1,5 +1,5 @@
 from services.facilitity_services import FacilityService
-from validates import validate_choice
+from validaters import validate_choice
 from .utils import print_facilities
 
 
