@@ -58,6 +58,32 @@ The following have been used on this project:
 - [Alembic](https://alembic.sqlalchemy.org/en/latest/)
 - [Faker](https://faker.readthedocs.io/en/master/)
 
+## Project Setup
+
+- Clone the repository: `git clone <repository-url>`
+- Navigate to cloned repository: `cd phase-3-final-project`
+- Create pipenv environment and Install dependencies: `pipenv install`
+- Activate environment: ` pipenv install`
+- Run test using pytest: `pytest`
+
+## Create database migrations
+
+- create db from migrations with alembic: `cd app/db && alembic updgrade heads`
+- populate db with `seed.py`: `python3 seed.py`
+
+## Testing manually with debug file (ipdb)
+
+- Navigate to `app/db` directory: ` cd app/db`
+- Run `seed.py` file to populate db with fake data: ` python3 seed.py`
+- Run `debug.py` file to get ipdb terminal: ` python3 debug.py`
+
+## How to run App
+
+After cloning project and seeding data:
+
+- Navigate to `phase-3-final-project/app`
+- Run application: `python3 main.py`
+
 ## Authors
 
 - [John Maluki](https://github.com/john-maluki)
