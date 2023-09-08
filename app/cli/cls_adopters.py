@@ -124,7 +124,7 @@ def interacting_with_adopters():
         print("5) List facility associated with adopter")
         print("6) Quit interacting with facilities!")
 
-        choice = int(validate_choice(input(">>>> "), 5))
+        choice = int(validate_choice(input(">>>> "), 6))
 
         if choice == 1:
             list_all_adopters()

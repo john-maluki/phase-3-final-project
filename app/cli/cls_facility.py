@@ -147,7 +147,7 @@ def interact_with_facilities():
         print("6) Delete facility!!")
         print("7) Quit interacting with facilities!")
 
-        choice = int(validate_choice(input(">>>> "), 5))
+        choice = int(validate_choice(input(">>>> "), 7))
 
         if choice == 1:
             list_facilities()
