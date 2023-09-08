@@ -52,8 +52,8 @@ class Adopter(Base):
         """
         Returns facility adopter own dogs
         """
-        facilities = [dog.facility for dog in self.dogs]
-        return facilities
+        facilities = set([dog.facility for dog in self.dogs])
+        return list(facilities)
 
     def __repr__(self):
         return "Adopter<{0} {1}>".format(self.first_name, self.last_name)
